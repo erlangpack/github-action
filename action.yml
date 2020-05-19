@@ -1,0 +1,9 @@
+name: 'Publish to Hex'
+description: 'Publish your repository’s Git tags as releases on Hex.pm'
+inputs:
+  hex-api-key:
+    description: 'Your Hex API key that has write permissions to your package'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
