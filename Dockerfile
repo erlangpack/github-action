@@ -1,8 +1,8 @@
 FROM erlang:23.0-alpine
 
-COPY rebar.config /root/.config/rebar3/rebar.config
-COPY entrypoint.sh /entrypoint.sh
+RUN apk add --no-cache git
 
-RUN rebar3 update
+COPY rebar.config /rebar3/.config/rebar3/rebar.config
+COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
