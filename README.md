@@ -8,20 +8,20 @@ to Hex.pm automatically. This is most useful when you tag your repository.
 1. First, create a key on your [Hex.pm dashboard](https://hex.pm/dashboard/keys). Make sure to give it write
    permissions.
    
-2. Next, use this GitHub Action in your workflow:    
+2. Next, add the key from step 1 to your GitHub repository’s secrets. Call it `HEX_API_KEY`.
+   
+3. Finally, use this GitHub Action in your workflow:
 
     ```yaml
     on:
       push:
         tags:
         - '*'
-    uses: erlangpack/github-action@v1
-    with:
-      hex-api-key: ${{ secrets.HEX_API_KEY }}    
+    jobs:
+      publish:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: erlangpack/github-action@v1
+          env:
+            HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
     ```
-
-## Inputs
-
-### `hex-api-key`
-
-**Required** Your Hex API with write permissions. Make sure never to expose this key, so add it as a secret. 
