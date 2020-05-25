@@ -16,6 +16,7 @@ to Hex.pm automatically. This is most useful when you tag your repository.
       push:
         tags:
           - '*'
+
     jobs:
       publish:
         runs-on: ubuntu-latest
