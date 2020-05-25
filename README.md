@@ -21,7 +21,11 @@ to Hex.pm automatically. This is most useful when you tag your repository.
       publish:
         runs-on: ubuntu-latest
         steps:
-        - uses: erlangpack/github-action@v1
-          env:
-            HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
+          - name: Check out
+            uses: actions/checkout@v2
+
+          - name: Publish to Hex.pm
+            uses: erlangpack/github-action@v1
+            env:
+              HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
     ```
