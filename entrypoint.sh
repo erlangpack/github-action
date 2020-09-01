@@ -4,4 +4,5 @@
 # to respect the REBAR_GLOBAL_CONFIG_DIR env var.
 ln -s /rebar3/.config ~/.config
 
+rebar3 edoc
 rebar3 hex publish -r hexpm --yes
