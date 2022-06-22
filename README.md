@@ -25,7 +25,7 @@ to Hex.pm automatically. This is most useful when you tag your repository.
             uses: actions/checkout@v2
 
           - name: Publish to Hex.pm
-            uses: erlangpack/github-action@v2
+            uses: erlangpack/github-action@v3
             env:
               HEX_API_KEY: ${{ secrets.HEX_API_KEY }}
     ```
