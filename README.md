@@ -22,7 +22,7 @@ to Hex.pm automatically. This is most useful when you tag your repository.
         runs-on: ubuntu-latest
         steps:
           - name: Check out
-            uses: actions/checkout@v2
+            uses: actions/checkout@v3
 
           - name: Publish to Hex.pm
             uses: erlangpack/github-action@v3
