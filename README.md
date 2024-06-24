@@ -1,7 +1,7 @@
 # ErlangPack GitHub Action
 
 Keeping our packages up to date on Hex.pm is something we all forget too easily. This GitHub Action publishes your code
-to Hex.pm automatically. This is most useful when you tag your repository.
+to Hex.pm automatically using [Rebar3](https://rebar3.org). This is most useful when you tag your repository.
 
 ## Usage
 
