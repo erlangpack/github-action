@@ -19,8 +19,15 @@ to Hex.pm automatically using [Rebar3](https://rebar3.org). This is most useful 
 
     jobs:
       publish:
-        runs-on: ubuntu-latest
-        steps:
+        name: Publish ${{ github.ref }} to Hex ${{ matrix.otp_version }}
+        runs-on: ${{ matrix.os }}
+
+      strategy:
+        matrix:
+          otp_version: [24.0.5]
+          os: [ubuntu-latest]
+
+      steps:
           - name: Check out
             uses: actions/checkout@v3
 
